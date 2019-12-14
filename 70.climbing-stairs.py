@@ -19,6 +19,7 @@ class Solution:
             a, b = b, a + b
         return b
 
+        # Fibonacci formula
         # a = math.sqrt(5)
         # return int(1 / a * (math.pow((1 + a) / 2, n + 1) - math.pow((1 - a) / 2, n + 1)))
 
