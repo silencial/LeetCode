@@ -60,6 +60,12 @@ python 可以直接转为 str 后颠倒再转回 int，但并不是这题的本�
 
 ## Longest Common Prefix
 
+==写法很多。Horizontal/Vertical scanning, Recursion, Binary Search, Sorting==
+
+Horizontal/Vertical scanning 较直观，前者遍历 list 并将每一个 string 与第一个对比找出 LCP；后者对于字母进行遍历，找到不相同的即终止。
+
+python 中可以直接对列表进行 sort 操作，之后判断第一个与最后一个 string 的 LCP 即可。使用 `startswith`。
+
 ## 3Sum
 
 ## 3Sum Closest
@@ -72,7 +78,15 @@ python 可以直接转为 str 后颠倒再转回 int，但并不是这题的本�
 
 ## Valid Parentheses
 
+使用 stack (FILO)，注意在 python 中 list 即是 stack，有 `pop` 和 `append` 操作。
+
+建立 dict 对应括号方便判断。
+
+==在使用 HashTable 但不需要 key-value pair 时，用 `set`==
+
 ## Merge Two Sorted Lists
+
+MergeSort 中的 Merge 操作。当其中一个为 None 时可以终止判断，并将 linklist 的下一节点设为 `l1 or l2`
 
 ## Generate Parentheses
 
@@ -84,9 +98,21 @@ python 可以直接转为 str 后颠倒再转回 int，但并不是这题的本�
 
 ## Remove Duplicates from Sorted Array
 
+使用双指针，可以直接在原有 array 上进行修改而不改变长度，最后截取即可。
+
+python 的 `pop` 改变了原有 array 长度，实际上做了 copy paste，慢且耗内存
+
 ## Remove Element
 
+与 [Remove Duplicates from Sorted Array](#remove-duplicates-from-sorted-array) 类似，可使用双指针。
+
+可以进一步优化，使用头尾双指针，将 array 需要删除的元素位置与尾部元素交换，省去大量赋值操作。
+
 ## Implement strStr()
+
+对 haystack 的 index 进行遍历即可，注意遍历范围 max 为 `len(haystack) - len(needle) + 1`。
+
+注意 edge case：当 needle 长度大于 haystack 时直接返回 -1
 
 ## Divide Two Integers
 
@@ -102,11 +128,15 @@ python 可以直接转为 str 后颠倒再转回 int，但并不是这题的本�
 
 ## Search Insert Position
 
+标准的 binary search。在更新是记得是 mid$\pm1$，循环条件为 `low <= mid` 
+
 ## Valid Sudoku
 
 ## Sudoku Solver
 
 ## Count and Say
+
+recursion。使用一个 pointer 来保存当前 char 和个数。
 
 ## Combination Sum
 
@@ -138,6 +168,14 @@ python 可以直接转为 str 后颠倒再转回 int，但并不是这题的本�
 
 ## Maximum Subarray
 
+需要保存 local_max 和 global_max。
+
+对列表进行遍历：local_max 每次取 `max(local_max + x, x)`，global_max 每次取 `max(local_max, global_max)`。
+
+遍历+判断条件：当 local_max 小于 0 且小于当前数字时，local_max 可以被重置为当前数字。其它情况 local_max 加上当前数字即可。
+
+Divide and Conquer：每次二分 array，每个 array 返回四个数，l 为从第一个数开始的 MS，m 为 MS，r 为以最后一个数结尾的 MS，s 为整个 array 的和。整合两组数得到新的一组返回。
+
 ## Spiral Matrix
 
 ## Jump Game
@@ -147,6 +185,10 @@ python 可以直接转为 str 后颠倒再转回 int，但并不是这题的本�
 ## Insert Interval
 
 ## Length of Last Word
+
+使用 `s[::-1]` 即可，注意 trailing whitespace 的问题。
+
+可以用 `rstrip()` 和 `rfind(' ')` 寻找 index
 
 ## Spiral Matrix II
 
@@ -163,6 +205,8 @@ python 可以直接转为 str 后颠倒再转回 int，但并不是这题的本�
 ## Valid Number
 
 ## Plus One
+
+倒序遍历，注意判断 edge case 即全部为 9 的情况。
 
 ## Add Binary
 
