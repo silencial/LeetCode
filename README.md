@@ -210,11 +210,29 @@ Divide and Conquer：每次二分 array，每个 array 返回四个数，l 为�
 
 ## Add Binary
 
+倒序遍历，将 char 转为 int 后相加，判断进位。注意位数不同的情况。
+
+python 快速解法：`int(n, base=2)` 可以直接将任意进制 string/integer 转为十进制。`bin()` 将 integer 转为二进制 string，注意有 prefix `0b` 因此需要从第二位开始截取。
+
 ## Text Justification
 
 ## Sqrt(x)
 
+二分法。
+
+牛顿法：转化为求 $x^2 - a$ 的零点问题，牛顿法更加快速。
+
+内置函数：`int(x**0.5)`
+
 ## Climbing Stairs
+
+斐波那契数列。
+
+递归：`a(n) = a(n-1) + a(n-2)`，再给出 `a(1), a(2)` 即可。==但做了大量重复计算==
+
+从 `a(1)` 开始计算。
+
+数列求和：求通项公式
 
 ## Simplify Path
 
@@ -242,6 +260,8 @@ Divide and Conquer：每次二分 array，每个 array 返回四个数，l 为�
 
 ## Remove Duplicates from Sorted List
 
+注意 `next` 和 `next.next`
+
 ## Largest Rectangle in Histogram
 
 ## Maximal Rectangle
@@ -251,6 +271,8 @@ Divide and Conquer：每次二分 array，每个 array 返回四个数，l 为�
 ## Scramble String
 
 ## Merge Sorted Array
+
+in-place MergeSort。应从大到小排列，`nums1` 使用双指针判断读取位置和插入位置。注意读取位置变为 0 时的特殊情况
 
 ## Gray Code
 
