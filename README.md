@@ -1,3 +1,10 @@
+LeetCode 前 200 题
+
+- Easy: 55
+- Medium: 99
+- Hard: 38
+- **Lock**: 156, 157, 158, 159, 161, 163, 170, 186
+
 ## Two Sum
 
 空间换时间，创建 HashTable，遍历同时简化问题。
@@ -17,8 +24,6 @@
 注意 edge case，即字符串为空情况。
 
 ## Median of Two Sorted Arrays
-
-
 
 ## Longest Palindromic Substring
 
@@ -298,7 +303,13 @@ in-place MergeSort。应从大到小排列，`nums1` 使用双指针判断读取
 
 ## Same Tree
 
+recursion：自上而下，找到不同的条件即可，recursion 可以简写为 `isSameTree(p.left, q.left) and isSameTree(p.right, q.right)`
+
+iteration：使用 `deque`
+
 ## Symmetric Tree
+
+和 [Same Tree](#same-tree) 类似，发现对称条件 `p.left == q.right and p.right == q.left` 即可。
 
 ## Binary Tree Level Order Traversal
 
@@ -306,13 +317,19 @@ in-place MergeSort。应从大到小排列，`nums1` 使用双指针判断读取
 
 ## Maximum Depth of Binary Tree
 
+recursion 一行 + 终止条件。
+
 ## Construct Binary Tree from Preorder and Inorder Traversal
 
 ## Construct Binary Tree from Inorder and Postorder Traversal
 
 ## Binary Tree Level Order Traversal II
 
+BFS
+
 ## Convert Sorted Array to Binary Search Tree
+
+recursion + 二分法
 
 ## Convert Sorted List to Binary Search Tree
 
