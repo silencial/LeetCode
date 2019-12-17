@@ -335,9 +335,15 @@ recursion + 二分法
 
 ## Balanced Binary Tree
 
+Tree 计算 depth 的递归算法，注意 recursion 里的终止条件。
+
 ## Minimum Depth of Binary Tree
 
+BFS + list
+
 ## Path Sum
+
+recursion
 
 ## Path Sum II
 
@@ -351,19 +357,31 @@ recursion + 二分法
 
 ## Pascal's Triangle
 
+只需要在上一个 list 前添 0 再逐位相加即可。
+
 ## Pascal's Triangle II
+
+用 pascal 三角与排列数的关系，同时考虑对称性。
 
 ## Triangle
 
 ## Best Time to Buy and Sell Stock
 
+单次遍历，储存最小值并比较差值。
+
 ## Best Time to Buy and Sell Stock II
+
+累加 `max(prices[i] - prices[i-1], 0)`
 
 ## Best Time to Buy and Sell Stock III
 
 ## Binary Tree Maximum Path Sum
 
 ## Valid Palindrome
+
+头尾双指针遍历：判断是否 alphanumeric
+
+遍历构建新字符串：只包含 alphanumeric 的字符，判断 `str == str[::-1]`
 
 ## Word Ladder II
 
@@ -387,6 +405,12 @@ recursion + 二分法
 
 ## Single Number
 
+使用 HashTable：`pop`
+
+使用 Set：`set(list)` 创建一个不包含重复元素的集合
+
+==使用 xor：二进制中 `a xor a = 0`，`a xor 0 = a`==
+
 ## Single Number II
 
 ## Copy List with Random Pointer
@@ -396,6 +420,10 @@ recursion + 二分法
 ## Word Break II
 
 ## Linked List Cycle
+
+HashTable：创建 set 后遍历
+
+==使用双指针：slow & fast runner，一个每次更新一步，一个每次更新两步，在一次遍历内必会相遇。==
 
 ## Linked List Cycle II
 
@@ -424,6 +452,8 @@ recursion + 二分法
 ## Find Minimum in Rotated Sorted Array II
 
 ## Min Stack
+
+==使用第二个 stack 来储存最小值，可将 `getMin()` 变为 $O(1)$==
 
 ## Binary Tree Upside Down
 
