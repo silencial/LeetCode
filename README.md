@@ -4,6 +4,7 @@ LeetCode 前 200 题
 - Medium: 99
 - Hard: 38
 - **Lock**: 156, 157, 158, 159, 161, 163, 170, 186
+- Database：175-178，180-185，196-197
 
 ## Two Sum
 
@@ -465,6 +466,10 @@ HashTable：创建 set 后遍历
 
 ## Intersection of Two Linked Lists
 
+==若两个 linklist 长度相等，则必会在第一个 intersected node 上相遇==
+
+==若长度不同，则一次遍历后跳入对方的 head 重新遍历，必会在第一个 intersected node 上相遇==
+
 ## One Edit Distance
 
 ## Find Peak Element
@@ -479,41 +484,61 @@ HashTable：创建 set 后遍历
 
 ## Two Sum II - Input array is sorted
 
+可以使用 [Two Sum](#two-sum) 相同的方法。
+
+利用 sorted array 的特点，使用头尾双指针。
+
 ## Excel Sheet Column Title
 
+26 进制，注意数字从 0 开始但字母从 1 开始。
+
 ## Majority Element
+
+==利用 majority element 个数大于 $\lfloor n / 2 \rfloor$ 的性质==
+
+使用 `collections` 中的 `Counter`：自动计数后使用 `max(c.keys(), key=c.get)`。检查 val 够大时返回。
+
+计数：遇到相同元素 +1，不同 -1，数字为 0 时替换元素为当前元素。到最后返回
+
+sort：排序后返回中间值即可
 
 ## Two Sum III - Data structure design
 
 ## Excel Sheet Column Number
 
+[Excel Sheet Column Title](#excel-sheet-column-title) 的反问题，简单很多。
+
 ## Factorial Trailing Zeroes
+
+trailing zeros 只可能由 2*5 得到，包含 2 为因数的数有 $2, 4, 6, \dots$，包含 5 为因数的数有 $5, 10, 15, \dots$，因此只需要考虑包含 5 为因数的数。
+
+计算被 $5, 5^2, \dots$ 整除得到的数并求和即可。
 
 ## Binary Search Tree Iterator
 
 ## Dungeon Game
 
-## Combine Two Tables
+## ~~Combine Two Tables~~
 
-## Second Highest Salary
+## ~~Second Highest Salary~~
 
-## Nth Highest Salary
+## ~~Nth Highest Salary~~
 
-## Rank Scores
+## ~~Rank Scores~~
 
 ## Largest Number
 
-## Consecutive Numbers
+## ~~Consecutive Numbers~~
 
-## Employees Earning More Than Their Managers
+## ~~Employees Earning More Than Their Managers~~
 
-## Duplicate Emails
+## ~~Duplicate Emails~~
 
-## Customers Who Never Order
+## ~~Customers Who Never Order~~
 
-## Department Highest Salary
+## ~~Department Highest Salary~~
 
-## Department Top Three Salaries
+## ~~Department Top Three Salaries~~
 
 ## Reverse Words in a String II
 
@@ -523,9 +548,23 @@ HashTable：创建 set 后遍历
 
 ## Rotate Array
 
+直接拼接：`nums[:] = nums[:-k] + nusm[-k:]`
+
+Reverse ($\mathcal{O}(1)$ 空间)：首先将 List 反转，之后将头部至 k-1 元素反转，再将 k 至尾部元素反转 
+
 ## Reverse Bits
 
+使用 [Add Binary](add-binary) 中进制相互转化方法，注意由于是 32bit 整数需要加 trailing zeros
+
+使用 2 不断除并将结果 *2 后 + 除 2 的余数
+
+==Bit manipulation：左移右移和且操作==
+
 ## Number of 1 Bits
+
+和 [Reverse Bits](reverse-bits) 相似但更简单
+
+==Trick：将 n 与 n-1 进行且操作会将最后一位 1 改为 0==
 
 ## Word Frequency
 
@@ -535,9 +574,9 @@ HashTable：创建 set 后遍历
 
 ## Tenth Line
 
-## Delete Duplicate Emails
+## ~~Delete Duplicate Emails~~
 
-## Rising Temperature
+## ~~Rising Temperature~~
 
 ## House Robber
 
