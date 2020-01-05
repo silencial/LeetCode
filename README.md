@@ -4,7 +4,11 @@ LeetCode 前 200 题
 - Medium: 99
 - Hard: 38
 - **Lock**: 156, 157, 158, 159, 161, 163, 170, 186
+
+Other:
+
 - Database：175-178，180-185，196-197
+- Shell: 192-195
 
 ## Two Sum
 
@@ -28,7 +32,15 @@ LeetCode 前 200 题
 
 ## Longest Palindromic Substring
 
+Expand around center：遍历 index，分别检查奇偶 palindrome，比较长度
+
+Trick：在上述基础上统一奇偶性，即将重复字符全部跳过后比较。且重复字符可以看作整体只需要检查一次。同时可以检查长度，若字符串剩余长度小于目前最大 palindrome 的一半则不需要考虑剩下部分。
+
+[Manacher's Algorithm](https://www.hackerrank.com/topics/manachers-algorithm)：双指针保存 palindrome 中心和右端点位置，利用对称性。
+
 ## ZigZag Conversion
+
+创建长度为 rows 的数组，对原字符串遍历并将字符连接至对应的 row 上。==注意 row 的变换只有上下两个方向==。考虑特殊情况即 `rows=1` 或 `rows>=len(s)` 的情况。
 
 ## Reverse Integer
 
@@ -44,6 +56,12 @@ python 可以直接转为 str 后颠倒再转回 int，但并不是这题的本�
 
 ## String to Integer (atoi)
 
+去除 leading whitespace
+
+若第一个 char 不是 '+', '-' 或 数字，则 return
+
+记录下正负性，不断读取数字并判断是否溢出
+
 ## Palindrome Number
 
 和 [Reverse Integer](#reverse-integer) 类似，得到 reverse number 之后判断是否与原数相同即可。
@@ -53,6 +71,8 @@ python 可以直接转为 str 后颠倒再转回 int，但并不是这题的本�
 ## Regular Expression Matching
 
 ## Container With Most Water
+
+==头尾双指针，只有当更新较小高度的一头才有可能增大面积。==
 
 ## Integer to Roman
 
@@ -579,6 +599,8 @@ Reverse ($\mathcal{O}(1)$ 空间)：首先将 List 反转，之后将头部至 k
 ## ~~Rising Temperature~~
 
 ## House Robber
+
+寻找递推式 $f(0) = a_i,$ $f(1) = \max(a_0, a_1)$, $f(i) = \max(f(i-2) + a_i, f(i - 1))$
 
 ## Binary Tree Right Side View
 
