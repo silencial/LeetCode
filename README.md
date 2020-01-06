@@ -10,6 +10,17 @@ Other:
 - Database：175-178，180-185，196-197
 - Shell: 192-195
 
+# 建议
+
+刷题顺序：Top 100 Liked Questions -> Top Interview Questions -> 各个大公司的题目，Amazon -> Zenefits -> Google -> Facebook。从简到难。
+
+总结：知识点（tag）总结，做到看到题目快速反应。总结没见过的用法。
+
+# 盲区
+
+1. `itertools` 对 iterables 操作
+2. `reduce` 对 list 操作
+
 ## Two Sum
 
 空间换时间，创建 HashTable，遍历同时简化问题。
@@ -76,6 +87,8 @@ python 可以直接转为 str 后颠倒再转回 int，但并不是这题的本�
 
 ## Integer to Roman
 
+[Roman to Integer](#roman-to-integer) 的反问题，更难一些。注意需要考虑的数字为 1,4,5,9。
+
 ## Roman to Integer
 
 先将罗马字母到数字的对应写为 dict。
@@ -94,9 +107,21 @@ python 中可以直接对列表进行 sort 操作，之后判断第一个与最�
 
 ## 3Sum
 
+使用 [Two Sum](#two-sum)：遍历数组，对剩余数组寻找 twosum，注意在原有函数上增加 start index。另外需要对得到的结果进行排序并加入 HashTable 防止重复。
+
+双指针：对数组排序，遍历同时对剩下的数组使用双指针。为防止重复，当元素与前一个元素相同时 continue。注意当遍历的元素大于 0 时可以 break。且可以保存每次 right 指针，下一次循环则不需要从尾部开始。
+
 ## 3Sum Closest
 
+和 [3Sum](#3sum) 类似
+
 ## Letter Combinations of a Phone Number
+
+BackTracking：使用 recursion，将当前数字对应字符串的每一个字母加上下一个数字...
+
+==使用内置函数：`itertools.product` 输出 iterabl 的 Cartesian product。因此将每个 digit 对应 string 存入 list 后调用该函数，再遍历结果合并字符即可。==
+
+==一行代码：`functools.reduce` 对 list 的操作==
 
 ## 4Sum
 
