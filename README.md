@@ -20,6 +20,7 @@ Other:
 
 1. `itertools` 对 iterables 操作
 2. `reduce` 对 list 操作
+3. `defaultdict` dict 中元素是 list, dict, set, ...
 
 ## Two Sum
 
@@ -124,6 +125,14 @@ BackTracking：使用 recursion，将当前数字对应字符串的每一个字�
 ==一行代码：`functools.reduce` 对 list 的操作==
 
 ## 4Sum
+
+[2Sum](#two-sum) 和 [3Sum](#3sum) 推广版。
+
+使用 recursion：可以直接推广至 NSum
+
+使用双重 for 循环 + two pointers
+
+使用 dict 和 set：三重 for 循环 + dict 查找，set 添加防止重复元素。
 
 ## Remove Nth Node From End of List
 
