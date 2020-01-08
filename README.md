@@ -21,6 +21,7 @@ Other:
 1. `itertools` 对 iterables 操作
 2. `reduce` 对 list 操作
 3. `defaultdict` dict 中元素是 list, dict, set, ...
+4. bit manipulation：`<< k` 左移 k 位，即乘 $2^k$；`>>` 右移，即整除 $2^k$
 
 ## Two Sum
 
@@ -128,13 +129,15 @@ BackTracking：使用 recursion，将当前数字对应字符串的每一个字�
 
 [2Sum](#two-sum) 和 [3Sum](#3sum) 推广版。
 
-使用 recursion：可以直接推广至 NSum
+==使用 recursion：可以直接推广至 NSum==
 
 使用双重 for 循环 + two pointers
 
-使用 dict 和 set：三重 for 循环 + dict 查找，set 添加防止重复元素。
+==使用 dict 和 set：三重 for 循环 + dict 查找，set 添加防止重复元素==
 
 ## Remove Nth Node From End of List
+
+单次遍历：双指针间隔 N，当第二个位空时改变第一个的 next 到 next.next。==为处理 N 为 List 长度的特殊情况，可以在头部添加一个新 Node==
 
 ## Valid Parentheses
 
@@ -150,9 +153,13 @@ MergeSort 中的 Merge 操作。当其中一个为 None 时可以终止判断，
 
 ## Generate Parentheses
 
+使用 backtracking (dfs + pruning)：保存当前左右括号的个数
+
 ## Merge k Sorted Lists
 
 ## Swap Nodes in Pairs
+
+Recursion：每次选两个 Node 进行调转
 
 ## Reverse Nodes in k-Group
 
@@ -176,9 +183,17 @@ python 的 `pop` 改变了原有 array 长度，实际上做了 copy paste，慢
 
 ## Divide Two Integers
 
+Bit 左移右移：从大到小计算 dividend 被 2 的指数整除的 quotient，若比 divisor 大，则将结果 + 2 的指数，同时 dividend - divisor * 2 的指数
+
+注意 edge case 和 flow 情况
+
 ## Substring with Concatenation of All Words
 
 ## Next Permutation
+
+1. 需要更换的数为 从后往前遍历第一个非单调增的数 $a$，该点之后的点为单调减。
+2. 寻找更换的数，从后向前遍历找到第一个比 $a$ 大的数，与 a 调换，注意调换后剩余部分仍为单调减。
+3. 将剩下的数变为单调增，即使用头尾双指针遍历 swap。
 
 ## Longest Valid Parentheses
 
