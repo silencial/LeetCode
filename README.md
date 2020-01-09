@@ -1,8 +1,8 @@
 LeetCode 前 200 题
 
-- Easy: 55
-- Medium: 99
-- Hard: 38
+- Easy: 55 - 9
+- Medium: 99 - 6
+- Hard: 38 - 1
 - **Lock**: 156, 157, 158, 159, 161, 163, 170, 186
 
 Other:
@@ -199,13 +199,21 @@ Bit 左移右移：从大到小计算 dividend 被 2 的指数整除的 quotient
 
 ## Search in Rotated Sorted Array
 
+将判断条件总结清楚即可。
+
 ## Find First and Last Position of Element in Sorted Array
+
+左右各用二分法搜索，注意各种区别：`r=len(nums)` 或 `r=len(nums)-1`；`mid=(l+r)//2` 或 `mid=(l+r)//2+1 `；与 `nums[mid]` 相比是否带等于号...
 
 ## Search Insert Position
 
 标准的 binary search。在更新是记得是 mid$\pm1$，循环条件为 `low <= mid` 
 
 ## Valid Sudoku
+
+row, col, sub-square 可以在双重 for 循环中一起检查，注意 index 的变换
+
+使用 set：双重 for 循环将 value 对应的 row，col，sub-square 作为 tuple 加入 list 中，再使用 set 判断是否有重复。注意 row 和 col 重复问题。
 
 ## Sudoku Solver
 
@@ -215,7 +223,13 @@ recursion。使用一个 pointer 来保存当前 char 和个数。
 
 ## Combination Sum
 
+使用 backtracking：
+
+先 sorting 再进行 backtracking，利用排序数组可以提前终止搜索
+
 ## Combination Sum II
+
+和 [Combination Sum](#combination-sum) 类似，加避免重复条件的判断即可
 
 ## First Missing Positive
 
