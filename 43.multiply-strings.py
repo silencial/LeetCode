@@ -18,4 +18,3 @@ class Solution:
         return '0' if not res.lstrip('0') else res.lstrip('0')
 
 # @lc code=end
-

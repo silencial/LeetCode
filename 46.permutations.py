@@ -40,4 +40,3 @@ class Solution:
     #     return list(itertools.permutations(nums))
 
 # @lc code=end
-
