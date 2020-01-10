@@ -20,7 +20,10 @@ Other:
 
 1. `itertools` 对 iterables 操作
 2. `reduce` 对 list 操作
-3. `defaultdict` dict 中元素是 list, dict, set, ...
+3. `collection` high-performance container datatypes:
+   1. `Counter`: dict 子类，用来计数
+   2. `OrderDict`: dict 子类，保留元素加入顺序
+   3. `defaultdict`: dict 子类，元素可以是 list, dict, set, ...
 4. bit manipulation：`<< k` 左移 k 位，即乘 $2^k$；`>>` 右移，即整除 $2^k$
 
 ## Two Sum
@@ -237,13 +240,25 @@ recursion。使用一个 pointer 来保存当前 char 和个数。
 
 ## Multiply Strings
 
+使用手算乘法的计算方法，创建 list 储存每一位的数字。
+
 ## Wildcard Matching
 
 ## Jump Game II
 
 ## Permutations
 
+Backtracking：对 list 中元素遍历，对剩下元素继续 permutation
+
+Iterative：保存 list[list]，包含当前所有可能的 permutation，对 list 遍历并将新元素插入每个 list 中从 0 到 len(list) 的位置得到下一步的 permutation
+
 ## Permutations II
+
+与 [Permutations](#permutations) 类似，有两种方法，需要加入判断防止重复。
+
+Backtracking：对数组排序，若遍历到的元素和前一位相同，则跳过
+
+==Iterative：若当前插入元素和插入断点的元素相同，则跳出插入循环==
 
 ## Rotate Image
 
