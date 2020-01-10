@@ -26,6 +26,8 @@ Other:
    3. `defaultdict`: dict 子类，元素可以是 list, dict, set, ...
 4. bit manipulation：`<< k` 左移 k 位，即乘 $2^k$；`>>` 右移，即整除 $2^k$
 5. `zip(*List[List])`：将 “matrix” 转置
+6. 对 string 使用 `sorted()` 会输出 list
+7. list 无法被 hashed，需要转换为 tuple
 
 ## Two Sum
 
@@ -267,7 +269,15 @@ Backtracking：对数组排序，若遍历到的元素和前一位相同，则�
 
 内置函数：使用 zip(*matrix) 可以对“矩阵”进行转置
 
+转置：顺时针旋转九十度 = 将行排列倒置+转置
+
 ## Group Anagrams
+
+排序：对 string 排序后判断是否在 dict 中
+
+26 字母：对每一个 string 创建长度为 26 的 list，计算每一个字母在 string 中出现的次数，将该 list 作为 key。
+
+==质数：利用质数性质，将 26 个字母对应到不同的质数，对于每一个 string 计算对应质数的乘积，并作为 key。存在一一对应关系==
 
 ## Pow(x, n)
 
@@ -667,7 +677,7 @@ Reverse ($\mathcal{O}(1)$ 空间)：首先将 List 反转，之后将头部至 k
 
 和 [Reverse Bits](reverse-bits) 相似但更简单
 
-==Trick：将 n 与 n-1 进行且操作会将最后一位 1 改为 0==
+==Trick：将 n 与 n-1 进行 & 操作会将最后一位 1 改为 0==
 
 ## Word Frequency
 

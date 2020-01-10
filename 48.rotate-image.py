@@ -7,15 +7,15 @@
 # @lc code=start
 class Solution:
     # Math
-    def rotate(self, matrix: List[List[int]]) -> None:
-        """
-        Do not return anything, modify matrix in-place instead.
-        """
-        n = len(matrix)
-        for i in range(n // 2):
-            for j in range(n - 2*i - 1):
-                matrix[i][i + j], matrix[i + j][~i], matrix[~i][~(i + j)], matrix[~(i + j)][i] = \
-                    matrix[~(i + j)][i], matrix[i][i + j], matrix[i + j][~i], matrix[~i][~(i + j)]
+    # def rotate(self, matrix: List[List[int]]) -> None:
+    #     """
+    #     Do not return anything, modify matrix in-place instead.
+    #     """
+    #     n = len(matrix)
+    #     for i in range(n // 2):
+    #         for j in range(n - 2*i - 1):
+    #             matrix[i][i + j], matrix[i + j][~i], matrix[~i][~(i + j)], matrix[~(i + j)][i] = \
+    #                 matrix[~(i + j)][i], matrix[i][i + j], matrix[i + j][~i], matrix[~i][~(i + j)]
 
     # Reverse first
     def rotate(self, matrix: List[List[int]]) -> None:
@@ -24,10 +24,9 @@ class Solution:
         """
         n = len(matrix)
         matrix.reverse()
-        for i in range(n // 2):
-            for j in range(n - 2*i - 1):
-                matrix[i][i + j], matrix[i + j][~i], matrix[~i][~(i + j)], matrix[~(i + j)][i] = \
-                    matrix[~(i + j)][i], matrix[i][i + j], matrix[i + j][~i], matrix[~i][~(i + j)]
+        for i in range(n):
+            for j in range(i + 1, n):
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
 
     # Built-in function
     # def rotate(self, matrix: List[List[int]]) -> None:
