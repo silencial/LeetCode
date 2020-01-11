@@ -281,6 +281,8 @@ Backtracking：对数组排序，若遍历到的元素和前一位相同，则�
 
 ## Pow(x, n)
 
+因 n 为整数，可以通过二进制将 pow 转换为乘法，可以通过 n 的移位实现；或 recursion。注意当 n<0 时需要转化。
+
 ## N-Queens
 
 ## N-Queens II
@@ -297,9 +299,17 @@ Divide and Conquer：每次二分 array，每个 array 返回四个数，l 为�
 
 ## Spiral Matrix
 
+Recursion：左右下上 + 剩下的 matrix，注意 edge case 即剩下的 matrix　为空或一行或一列的情况。
+
+Loop：保存 top, bot, left, right 指标并对上右下左遍历，对下左遍历时需要先判断是否和上右重合。
+
 ## Jump Game
 
+初始化 `step=0`，从倒数第二位元素向前遍历，若当前元素 <= step 则说明从该元素出发无法到达底端，``step++``，否则重置 `step=0`。最后判断 `step==0` 即可。
+
 ## Merge Intervals
+
+排序后，对原 intervals 遍历，比较两个 interval 是否可以 merge，否则 append。
 
 ## Insert Interval
 
@@ -310,6 +320,12 @@ Divide and Conquer：每次二分 array，每个 array 返回四个数，l 为�
 可以用 `rstrip()` 和 `rfind(' ')` 寻找 index
 
 ## Spiral Matrix II
+
+和 [Spiral Matrix](#spiral-matrix) 类似
+
+Loop：遍历不断插入数字
+
+U-turn：遍历不断插入数字，若当后一步插入位置元素不为 0 时，则需要做顺时针 90 度转弯。使用 `i, j, di, dj` 实现。
 
 ## Permutation Sequence
 
