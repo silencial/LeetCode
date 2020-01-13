@@ -329,13 +329,25 @@ U-turn：遍历不断插入数字，若当后一步插入位置元素不为 0 �
 
 ## Permutation Sequence
 
+使用 $m!$ 做基底可将 $k$ 分解为 $k = \sum_{m=0}^{n - 1} k_m m!$，$0\le k_m \le m$. 而 $k_m$ 则对应 $[1,2,\dots, n]$ 的 index。==注意要先将 k 减一==
+
 ## Rotate List
+
+和 [Remove Nth Node From End of List](#remove-nth-node-from-end-of-list) 类似。需要先计算 list 长度后用 k 对其取余，若为 0 则不需要 rotate。
 
 ## Unique Paths
 
+经典游戏，找到规律 `path[i][j]=path[i-1][j]+path[i][j-1]` 即可。
+
+==更近一步，只保存 `min(m, n)` 的 list，每次循环 `path[i] += path[i-1]` 即可。注意结果关于 m，n 对称==
+
 ## Unique Paths II
 
+和 [Unique Paths](#unique-paths) 类似，先对第一行和第一列遍历，遇到 1 后将后面都设置为 0。再从 (1,1) 处遍历，遇 1 则变 0 continue。
+
 ## Minimum Path Sum
+
+和 [Unique Paths](#unique-paths)，[Unique Paths II](#unique-paths-ii) 类似，`path[i][j]=min(path[i-1][j], path[i][j-1])`
 
 ## Valid Number
 
