@@ -383,6 +383,8 @@ python 快速解法：`int(n, base=2)` 可以直接将任意进制 string/intege
 
 ## Simplify Path
 
+使用 `split('/')` 拆分 Path 后遍历，保存 stack，最后使用 '/' 将 stack 连接为字符串。
+
 ## Edit Distance
 
 ## Set Matrix Zeroes
