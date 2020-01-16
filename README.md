@@ -389,15 +389,33 @@ python 快速解法：`int(n, base=2)` 可以直接将任意进制 string/intege
 
 ## Set Matrix Zeroes
 
+set：遍历 matrix，使用 `set` 保存 0 所在的行和列。后对 `set` 遍历设为 0
+
+改进：可以只保存列，行元素在遍历同时设为 0
+
+==constant space：遍历 matrix，若为 0，则将对应行和列的第一个元素设为 0，之后再进行遍历赋值。注意 `matrix[0][0]` 需要单独考虑。==
+
 ## Search a 2D Matrix
 
+二分搜索进阶版。
+
+先第一列再行搜索：注意第一列搜索需要找到最后一个小于元素的 row index 
+
+直接合并搜索：需要找到 index 和 (i,j) 的对应关系
+
 ## Sort Colors
+
+==双指针：头尾指针，遍历 list，若为 0 则与头指针交换元素；若为 2 则与尾指针交换。注意与头指针交换时可 +1，与尾指针交换时不可。因为尾指针交换过来的元素需要为 1 才可 +1。==
 
 ## Minimum Window Substring
 
 ## Combinations
 
+Recursion：`comb(n,k)=(comb(n-1,k-1)+n)+comb(n,k-1)`，注意 edge case 即 `n<k or k<=0` 的情况。
+
 ## Subsets
+
+Iteration：遍历 input，对于 output 中的每一个 list，copy并加入新元素，再加回至 output。
 
 ## Word Search
 
